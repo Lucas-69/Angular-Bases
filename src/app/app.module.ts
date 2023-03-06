@@ -3,12 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
+//para hacer peticion http y traer el servicio 
+import { HttpClientModule } from '@angular/common/http';
+
+import { AppRoutingModule } from './app-routing.module';
+import { MenuComponent } from './components/menu/menu.component';
+import { PagesModule } from './pages/pages.module';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    // AboutComponent,
+    // ContactComponent,
+    // HomeComponent,
+    MenuComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    PagesModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
