@@ -1,14 +1,15 @@
 <h1>Posts</h1>
 
 <ul class="list-group">
-    
-    <li *ngFor="let post of [1,1,1,1,1,1]" class="list-group-item">
-        <h2>Titulo</h2>
+    <!-- ahora para utilizar estos mensajes hay que pasarlos por el PIE 
+        asyng, esto es una "tuberia" -> | <- con async  
+    con esto lo que hacemos es que se cancele la suscripcion cuando cambiamos de pagina-->
+    <li *ngFor="let mensaje of mensajes | async" class="list-group-item">
+        <h2>{{ mensaje.title }}</h2>
         
-        <p>
-            soy un parrafo
-        </p>
-
-
+        <p>{{ mensaje.body}}</p>
+        <p>Articulo {{ mensaje.id}}</p>
+        
     </li>
+    
 </ul>
