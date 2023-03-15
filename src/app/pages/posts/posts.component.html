@@ -1,9 +1,11 @@
 <h1>Posts</h1>
 
 <ul class="list-group">
-    <!-- ahora para utilizar estos mensajes hay que pasarlos por el PIE 
-        asyng, esto es una "tuberia" -> | <- con async  
-    con esto lo que hacemos es que se cancele la suscripcion cuando cambiamos de pagina-->
+     <!-- ahora para utilizar estos mensajes hay que pasarlos por el PIE 
+
+
+        async, esto es una "tuberia" -> | <- con async  
+    con esto lo que hacemos es que se cancele la suscripcion cuando cambiamos de pagina
     <li *ngFor="let mensaje of mensajes | async" class="list-group-item">
         <h2>{{ mensaje.title }}</h2>
         
@@ -11,5 +13,10 @@
         <p>Articulo {{ mensaje.id}}</p>
         
     </li>
-    
+     -->
+
+     <app-post *ngFor="let mensaje of mensajes | async" [mensaje]="mensaje" 
+        (clickPosts)="escuchaClick( $event )">  </app-post>
+     <!-- clickPosts va a disparar una funcion ya propia en el componente padre, "escuchaClick() entre parentesis recibo 
+        el evento que voy a emitir en el componente hijo, este evento lo reconozco con este simbolo $  " -->
 </ul>

@@ -21,12 +21,16 @@ export class PostsComponent {
     //this.mensaje ahora es un puntero a el valor de estos posteos, osea de esta suscripcion 
     this.mensajes = this.dataService.getPosts();
 
-      //Lo dejamos como referencia de cuando empezabamos el curso
+      // ---------  Lo dejamos como referencia de cuando empezabamos el curso ---------
       // .subscribe( 
       //   (posts: any ) => 
       //   {console.log(posts);
       //   //asigno los mensajes a los posteos que recibo de mi servicio
       //   this.mensajes = posts;  
       // });
+  }
+
+  escuchaClick( id: number ){
+    console.log('Click en:', id)
   }
 }
